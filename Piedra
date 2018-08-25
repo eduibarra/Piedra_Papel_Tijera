@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Piedra{
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		String jugador1, j1;
+		String jugador2, j2;
+
+		System.out.print("Primer jugador: ");
+		jugador1 = entrada.nextLine();
+		System.out.print("Segundo jugador: ");
+		jugador2 = entrada.nextLine();
+		char rta = 's';
+
+		while (rta == 's') {
+			j1 = valor();
+			j2 = valor();
+			System.out.println();
+			System.out.println(jugador1+" "+ j1);
+			System.out.println(jugador2+" "+ j2);
+
+			System.out.print("Continuar? s/n ");
+			rta = entrada.next().charAt(0);
+		}
+
+	}
+
+	static String valor(){
+		String jugada = "";
+		int item = (int)(Math.random()*3);
+		switch (item) {
+			case 0:
+				jugada = "Piedra";
+				break;
+			case 1:
+				jugada = "Papel";
+				break;
+			case 2:
+				jugada = "Tijera";
+				break;
+			}
+		return jugada;
+	}
+}
